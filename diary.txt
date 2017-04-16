@@ -1,0 +1,30 @@
+Prolog program for proceeding voice assignment.
+
+************************************************************
+************************ 25. 5.2016 ************************
+************************************************************
+* Tech overview
+	-> https://www.google.com/intl/en/chrome/demos/speech.html
+	-> https://cloud.google.com/translate/v2/quickstart
+	-> http://prog.vub.ac.be/~cderoove/declarative_programming/decprog3_eliza.pdf
+	-> https://chrome.google.com/webstore/detail/tts-engine-using-google-t/heapeepeplnopkplmnehobamjenidpga/related
+
+************************************************************
+************************  5. 6.2016 ************************
+************************************************************
+* Online review
+	-> for any good prolog javyscript interpret you need own serwer
+		-> http://pengines.swi-prolog.org/apps/scratchpad/index.html
+	-> there are still some, but I don't have time for it
+		-> I will make some API, but I won't care more about it
+
+************************************************************
+************************ 12. 6.2016 ************************
+************************************************************
+* In/Out api
+* toLowerCase
+* Basic untiles
+
+************************************************************
+************************ ??. 6.2016 ************************
+************************************************************

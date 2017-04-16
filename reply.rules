@@ -1,0 +1,288 @@
+% Eliza - Reply Rules
+% Martin Mares <mmrmartin@gmail.com>
+   
+% The format of the rules is:
+% rules(ID ,importance of rule , [the pattern], [
+%             [response 1],
+%             [response 2],
+%             ...
+%             [response n]]).
+% Content of rules is based on Viren Patel's ELIZA in Prolog (vpatel@aisun1.ai.uga.edu)
+
+rules(1, 0,[sorry|_],[
+		[please,do,not,apologize,.],
+		[apologies,are,not,necessary,.],
+		[what,feelings,do,you,have,when,you,apologize,?],
+		['I',have,told,you,that,apologies,are,not,required,.]]).
+
+rules(2, 5,[you,remember|Y],[
+		[do,you,often,think,of,Y,?],
+		[does,thinking,of,Y,bring,anything,else,to,mind,?],
+		[what,else,do,you,remember,?],
+		[why,do,you,remember,Y,just,now,?],
+		[what,in,the,present,situation,reminds,you,of,Y,?],
+		[what,is,the,connection,between,me,and,Y,?]]).
+rules(3, 5,[do,i,remember|Y],[
+		[did,you,think,'I',would,forget,Y,?],
+		[why,do,you,think,i,should,recall,Y,now,?],
+		[what,about,Y,?],
+		[you,mentioned,Y,.]]).
+
+rules(4, 3,[if|Y],[
+		[do,you,think,it,is,likely,that,Y,?],
+		[do,you,wish,that,Y,?],
+		[what,do,you,think,about,Y,?],
+		[really,',',if,Y,?]]).
+
+rules(5, 4,[you,dreamt|Y],[
+		[really,',',Y,?],
+		[have,you,ever,fantasied,Y,while,you,were,awake,?],
+		[have,you,dreamt,Y,before,?]]).
+
+rules(6, 3,[dream|_],[
+		[what,does,that,dream,suggest,to,you,?],
+		[do,you,dream,often,?],
+		[what,persons,appear,in,your,dreams,?],
+		[do,you,believe,that,dreaming,has,something,to,do,with,your,problem,?]]).
+
+rules(7, -1,[_],[
+		[plese,tell,me,more,...],
+		['I',am,not,sure,'I',understand,you,fully,.],
+		[please,go,on,.],
+		[what,does,that,suggest,to,you,?],
+		[do,you,feel,strongly,about,discussing,such,things,?]]).
+
+rules(8, 0,[perhaps|_],[
+		[you,do,not,seem,quite,certain,.],
+		[why,the,uncertain,tone,?],
+		[can,you,not,be,more,positive,?],
+		[you,are,not,sure,?],
+		[do,you,not,know,?]]).
+
+rules(9, 15, [name|_],[
+		['I',am,not,interested,in,names,.],
+		['I',have,told,you,before,',','I',do,not,care,about,names,.],
+		[please,continue,.]]).
+
+rules(10, 75,[xfremd|_],[
+		['I',am,sorry,',','I',only,speak,'English',.]]).
+
+rules(11, 0,[hello|_],[
+		[how,do,you,do,'.','Please',state,your,problem,.]]).
+
+rules(12, 50,[computer|_],[
+		[do,computers,worry,you,?],
+		[why,do,you,mention,computers,?],
+		[what,do,you,think,machines,have,to,do,with,your,problem,?],
+		[do,you,not,think,computers,can,help,people,?],
+		[what,about,machines,worries,you,?],
+		[what,do,you,think,about,machines,?]]).
+
+rules(13, 0,[are,you|Y],[
+		[do,you,believe,you,are,Y,?],
+		[would,you,want,to,be,Y,?],
+		[you,wish,'I',would,tell,you,you,are,Y,?],
+                [what,would,it,mean,if,you,were,Y,?]]).
+rules(14, 0,[are,i|Y],[
+		[why,are,you,interested,in,whether,'I',am,Y,or,not,?],
+		[would,you,prefer,if,'I',were,not,Y,?],
+		[perhaps,'I',am,Y,in,your,fantasies,.],
+                [do,you,sometimes,think,'I',am,Y,?]]).
+rules(15, 0,[are|Y],[
+		[did,you,think,they,might,not,be,Y,?],
+		[would,you,like,it,if,they,were,not,Y,?],
+		[what,if,they,were,not,Y,?],
+		[possibly,they,are,Y,.]]).
+rules(16, 0,[are|_],[
+		[why,do,you,say,am,?],
+		['I',do,not,understand,that,.]]).
+
+
+rules(17, 0,[my|Y],[
+		[why,are,you,concerned,over,my,Y,?],
+		[what,about,your,own,Y,?],
+		[are,you,worried,about,someone,elses,Y,?],
+		[really,',',my,Y,?]]).
+
+rules(18, 2,[was,you|Y],[
+		[what,if,you,were,Y,?],
+		[do,you,think,you,were,Y,?],
+		[were,you,Y,?],
+		[what,would,it,mean,if,you,were,Y,?],
+                [what,does,Y,suggest,to,you,?]]).
+rules(19, 2,[you,was|Y],[
+		[were,you,really,?],
+		[why,do,you,tell,me,you,were,Y,just,now,?],
+		[perhaps,'I',already,knew,you,were,Y,.]]).
+rules(20, 2,[was,i|Y],[
+		[would,you,like,to,believe,'I',was,Y,?],
+		[what,suggests,that,'I',was,Y,?],
+		[what,do,you,think,?],
+		[perhaps,'I',was,Y,.],
+		[what,if,'I',had,been,Y,?]]).
+rules(21, 1,[you,cant|Y],[
+		[how,do,you,know,you,can,not,Y,?],
+		[have,you,tried,?],
+		[perhaps,you,could,Y,now,?],
+		[do,you,really,want,to,be,able,to,Y,?]]).
+rules(22, 1,[you,dont|Y],[
+		[do,you,not,really,Y,?],
+		[why,do,you,not,Y,?],
+		[do,you,wish,to,be,able,to,Y,?],
+		[does,that,trouble,you,?]]).
+rules(23, 1,[you,feel|Y],[
+		[tell,me,more,about,such,feelings,.],
+		[do,you,often,feel,Y,?],
+		[do,you,enjoy,feeling,Y,?],
+		[of,what,does,feeling,Y,remind,you,?]]).
+rules(24, 1,[you,Y,i,_|_],[
+		[perhaps,in,your,fantasy,we,Y,each,other,?],
+		[do,you,wish,to,Y,me,?],
+		[you,seem,to,need,to,Y,me,.],
+		[do,you,Y,anyone,else,?]]).
+rules(25, 1,[you,M|Y],[
+		[what,would,it,mean,to,you,if,you,got,Y,?],
+		[why,do,you,want,Y,?],
+		[suppose,you,got,Y,soon,?],
+		[what,if,you,never,got,Y,?],
+		[what,would,getting,Y,mean,to,you,?],
+		[what,does,wanting,Y,have,to,do,with,this,discussion,?]]):-
+		member(M,[want,need]).
+rules(26, 1,[you,M,you,Y|_],[
+		[do,you,really,think,so,?],
+		[but,you,are,not,sure,you,Y,?],
+		[do,you,really,doubt,you,Y,?]]):-
+		member(M,[feel,think,believe,wish]).
+rules(27, 1,[youre|Res],[
+		['I',am,sorry,to,hear,you,are,M,.],
+		[do,you,think,coming,here,will,help,you,not,to,be,M,?],
+		['I',am,sure,it,is,not,pleasant,to,be,M,.],
+		[can,you,explain,what,made,you,M,?]]):-
+		member(M,Res),
+		member(M,[sad,unhappy,depressed,sick]).
+rules(28, 1,[youre|Res],[
+		[how,have,'I',helped,you,to,be,M,?],
+		[has,your,treatment,made,you,M,?],
+		[what,makes,you,M,just,now,?],
+		[can,you,explain,why,you,are,suddenly,M,?]]):-
+		member(M,Res),
+		member(M,[happy,elated,glad,better]).
+rules(29, 1,[youre|Y],[
+		[is,it,because,you,are,Y,that,you,came,to,me,?],
+		[how,long,have,you,been,Y,?],
+		[do,you,believe,it,normal,to,be,Y,?],
+		[do,you,enjoy,being,Y,?]]).
+
+rules(30, 0,[im|Y],[
+		[what,makes,you,think,'I',am,Y,?],
+		[does,it,please,you,to,believe,'I',am,Y,?],
+		[do,you,sometimes,wish,you,were,Y,?],
+		[perhaps,you,would,like,to,be,Y,?]]).
+rules(31, 0,[i,Y,you|_],[
+		[why,do,you,think,'I',Y,you,?],
+		[you,like,to,think,'I',Y,you,',',do,you,not,?],
+		[what,makes,you,think,'I',Y,you,?],
+		[really,',','I',Y,you,.],
+		[do,you,wish,to,believe,'I',Y,you,?],
+		[suppose,'I',did,Y,you,',',what,would,that,mean,to,you,?],
+		[does,someone,else,believe,'I',Y,you,?]]).
+rules(32, 0,[i|Y],[
+		[we,were,discussing,you,',',not,me,.],
+		[oh,',',i,Y,.],
+		[you,are,not,really,talking,about,me,',',are,you,?],
+		[what,are,your,feelings,now,?]]).
+
+rules(33, 0,[yes|_],[
+		[you,seem,quite,positive,.],
+		[you,are,sure,?],
+		[i,see,.],
+		[i,understand,.]]).
+
+rules(34, 0,[no|_],[
+		[are,you,saying,no,just,to,be,negative,?],
+		[you,are,being,a,bit,negative,.],
+		[why,not,?],
+		[why,no,?]]).
+
+rules(35, 2,[your,M,Z|_],[
+		[tell,me,more,about,your,family,.],
+		[who,else,in,your,family,Z,?],
+		[your,M,?],
+		[what,else,comes,to,mind,when,you,think,of,your,M,?]]):-
+		member(M,[mother,father,brother,sister,children,wife]).
+rules(36, 2,[your|Y],[
+		[your,Y,?],
+		[why,do,you,say,your,Y,?],
+		[does,that,suggest,anything,else,which,belongs,to,you,?],
+		[is,it,important,to,you,that,your,Y,?]]).
+
+rules(37, 0,[can,i|Y],[
+		[you,believe,'I',can,Y,',',do,you,not,?],
+		[you,want,me,to,be,able,to,Y,?],
+		[perhaps,you,would,like,to,be,able,to,Y,yourself,?]]).
+rules(38, 0,[can,you|Y],[
+		[whether,or,not,you,can,Y,depends,on,you,more,than,on,me,.],
+		[do,you,want,to,be,able,to,Y,?],
+                [perhaps,you,do,not,want,to,Y,.]]).
+
+rules(39, 0,[what|_],[
+		[why,do,you,ask,?],
+		[does,that,question,interest,you,?],
+		[what,is,it,you,really,want,to,know,?],
+		[are,such,questions,much,on,your,mind,?],
+		[what,answer,would,please,you,most,?],
+		[what,do,you,think,?],
+		[what,comes,to,your,mind,when,you,ask,that,?],
+		[have,you,asked,such,questions,before,?],
+		[have,you,asked,anyone,else,?]]).
+
+rules(40, 0,[because|_],[
+		[is,that,the,real,reason,?],
+		[do,any,other,reasons,not,come,to,mind,?],
+		[does,that,reason,seem,to,explain,anything,else,?],
+		[what,other,reasons,might,there,be,?]]).
+
+rules(41, 0,[why,dont,i|Y],[
+		[do,you,believe,'I',do,not,Y,?],
+		[perhaps,'I',will,Y,in,good,time,.],
+		[should,you,Y,yourself,?],
+                [you,want,me,to,Y,?]]).
+rules(42, 0,[why,cant,you|Y],[
+		[do,you,think,you,should,be,able,to,Y,?],
+		[do,you,want,to,be,able,to,Y,?],
+		[do,you,believe,this,will,help,you,to,Y,?],
+                [have,you,any,idea,why,you,can,not,Y,?]]).
+
+rules(43, 0,[M|_],[
+		[really,',',M,?],
+		[surely,not,M,?],
+		[can,you,think,of,anyone,in,particular,?],
+		[who,',',for,example,?],
+		[you,are,thinking,of,a,very,special,person,?],
+		[who,',',may,i,ask,?],
+		[someone,special,perhaps,?],
+		[you,have,a,paticular,person,in,mind,',',do,you,not,?],
+		[who,do,you,think,you,are,talking,about,?]]):-
+		member(M,[everyone,everybody,nobody,noone]).
+
+rules(44, 1,[always|_],[
+		[can,you,think,of,a,specific,example,?],
+		[when,?],
+		[what,incident,are,you,thinking,of,?],
+		[really,',',always,?]]).
+
+rules(45, 10,[dit|_],[
+		[in,what,way,?],
+		[what,resemblance,do,you,see,?],
+		[what,does,that,similarity,suggest,to,you,?],
+		[what,other,connections,do,you,see,?],
+		[what,so,you,suppose,that,resemblance,means,?],
+		[what,is,the,connection,',',do,you,suppose,?],
+		[could,there,really,be,some,connection,?],
+		[how,?]]).
+
+rules(46, 100,[quit|_],[
+		[goodbye,.,'My',secretary,will,send,you,a,bill,.]]).
+
+rules(ID, Score,[im|X],R):-rules(ID, Score,[i|X],R),!.
+rules(ID, Score,[youre|X],R):-rules(ID, Score,[you|X],R),!.

@@ -1,0 +1,49 @@
+% Eliza - Simlification rules
+% Martin Mareš <mmrmartin@gmail.com>
+
+sr([do,not|X],[dont|Y],X,Y).
+sr([can,not|X],[cant|Y],X,Y).
+sr([cannot|X],[cant|Y],X,Y).
+sr([will,not|X],[wont|Y],X,Y).
+sr([dreamed|X],[dreamt|Y],X,Y).
+sr([dreams|X],[dream|Y],X,Y).
+sr([how|X],[what|Y],X,Y).
+sr([when|X],[what|Y],X,Y).
+sr([alike|X],[dit|Y],X,Y).
+sr([same|X],[dit|Y],X,Y).
+sr([certainly|X],[yes|Y],X,Y).
+sr([maybe|X],[perhaps|Y],X,Y).
+sr([deutsch|X],[xfremd|Y],X,Y).
+sr([francais|X],[xfremd|Y],X,Y).
+sr([czech|X],[xfremd|Y],X,Y).
+sr([slovak|X],[xfremd|Y],X,Y).
+sr([espanol|X],[xfremd|Y],X,Y).
+sr([machine|X],[computer|Y],X,Y).
+sr([machines|X],[computer|Y],X,Y).
+sr([computers|X],[computer|Y],X,Y).
+sr([im|X],[youre|Y],X,Y).
+sr([youre|X],[im|Y],X,Y).
+sr([am|X],[are|Y],X,Y).
+sr([your|X],[my|Y],X,Y).
+sr([were|X],[was|Y],X,Y).
+sr([me|X],[you|Y],X,Y).
+sr([you,are|X],[im|Y],X,Y).      % im = i'm = i am
+sr([i,am|X],[youre|Y],X,Y).      % youre = you're = you are =\= your
+sr([myself|X],[yourself|Y],X,Y).
+sr([yourself|X],[myself|Y],X,Y).
+sr([mom|X],[mother|Y],X,Y).
+sr([dad|X],[father|Y],X,Y).
+sr([i|X],[you|Y],X,Y).
+sr([you|X],[me|Y],X,Y).
+sr([my|X],[your|Y],X,Y).
+sr([everybody|X],[everyone|Y],X,Y).
+sr([nobody|X],[noone|Y],X,Y).
+% new rules
+sr([you,remind,me,of|X],[dit|Y],X,Y).
+sr([like|X],[dit|Y],X,Y).
+sr([bye|X],[quit|Y],X,Y).
+sr([goodbye|X],[quit|Y],X,Y).
+sr([hi|X],[hello|Y],X,Y).
+sr([ok|X],[yes|Y],X,Y).
+sr([okay|X],[yes|Y],X,Y).
+sr([yup|X],[yes|Y],X,Y).
